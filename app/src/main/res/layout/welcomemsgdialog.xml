@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/welcomettl"
+        android:background="#a4000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:text="Welcome New Player !">
+    </TextView>
+
+    <TextView
+        android:padding="25px"
+        android:id="@+id/welcomeContent"
+        android:background="#a4000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:text="\nThis is a mini-game containing five stages. swipe Pokemons to create matches of 3 Pokemon or more of the same type. earn points to pass the levels. have Fun! :)">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="#a4000000"
+        >
+        <Button
+            android:id="@+id/okBtn"
+            android:layout_width="match_parent"
+            android:text="OK"
+            android:background="#00000000"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textColor="#d80fb931"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+</LinearLayout>

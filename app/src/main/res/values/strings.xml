@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Poke-Crush</string>
+    <string name="secretKey">E19E875B-8597-687B-FF77-F77CACE60F00</string>
+    <string name="appId">234D792E-46AB-3EB8-FF5A-BF5DF2EFED00</string>
+    <string name="v">v1</string>
+    <string name="won">You Won!</string>
+    <string name="lost">You Lost!</string>
+    <string name="replay">Replay</string>
+    <string name="back">Back</string>
+    <string name="playon">Play On</string>
+</resources>
