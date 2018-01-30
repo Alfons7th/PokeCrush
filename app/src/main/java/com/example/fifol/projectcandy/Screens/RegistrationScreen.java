@@ -34,16 +34,15 @@ public class RegistrationScreen extends BaseActivity {
 
     public void registerBtnClick(View view) {
         makeSoundEnter();
-        if(!checkConnectivity()){
-            showToast("You don't have internet access");
-            return;
-        }
+
         if (inputValidation.isInputEmpty(emailInput) || inputValidation.isInputEmpty(passInput) || inputValidation.isInputEmpty(nameInput)) {
             showToast("Please fill all fields");
         }else if (!inputValidation.isEmailValid(emailInput)) {
             showToast("illegal Email");
         }else if (!inputValidation.onlyDigitsAndLetters(nameInput)||!inputValidation.onlyDigitsAndLetters(passInput)) {
             showToast("Name And Password can contain only letters and digits");
+        }else if (!checkConnectivity()) {
+            showToast("You don't have internet access");
         }else {
             progressBar.setVisibility(View.VISIBLE);
             BackendlessUser userInfo = new BackendlessUser();
