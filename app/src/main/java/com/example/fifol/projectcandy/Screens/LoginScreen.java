@@ -31,18 +31,22 @@ public class LoginScreen extends BaseActivity {
         passInput = findViewById(R.id.passInputLogin);
         progressBar = findViewById(R.id.indeterminateBar);
         findViewById(R.id.door).setOnClickListener(doorClicked);
-
-
     }
 
-    public void loginBtnClick(View view) {
+     public void loginBtnClick(View view) {
         makeSoundEnter();
-        if (!checkConnectivity()) {
+
+       if (inputValidation.isInputEmpty(emailInput) || inputValidation.isInputEmpty(passInput)) {
+            showToast("Please fill all fields");
+        }else if (!inputValidation.isEmailValid(emailInput)) {
+            showToast("illegal Email");
+        }else if (!inputValidation.onlyDigitsAndLetters(passInput)) {
+           showToast("Name And Password can contain only letters and digits");
+        }else if (!checkConnectivity()) {
             showToast("You don't have internet access");
-            return;
-        }
-        progressBar.setVisibility(View.VISIBLE);
-        if (!inputValidation.isInputEmpty(emailInput) && !inputValidation.isInputEmpty(passInput) && inputValidation.isEmailValid(emailInput) && inputValidation.onlyDigitsAndLetters(passInput)) {
+        }else {
+
+            progressBar.setVisibility(View.VISIBLE);
             Backendless.UserService.login(emailInput.getText().toString(), passInput.getText().toString(), new AsyncCallback<BackendlessUser>() {
 
                 public void handleResponse(BackendlessUser user) {
@@ -56,8 +60,7 @@ public class LoginScreen extends BaseActivity {
                     showToast("Incorrect Email Or Password");
                 }
             }, rememberMeStatus);
-        } else
-            progressBar.setVisibility(View.GONE);
+        }
     }
 
     public void rememberMeChange(View view) {
